@@ -220,3 +220,8 @@ just `pip install -r requirements.txt`.
 - **Wild-model + closed-API generation** (R1, Claude, o1/o3, QwQ) used external
   services (OpenRouter / vendor APIs) and is not scripted here; their responses
   ship pre-generated in `data/wild/` (redistribution subject to vendor TOS).
+
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
