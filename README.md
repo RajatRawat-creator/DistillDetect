@@ -133,42 +133,6 @@ python reproduce_open_questions.py             # open-world o1 significance + sa
 python plot_figures.py                         # replot the ranked CDF figures
 ```
 
-## File-by-file equivalence with the original codebase
-
-All Python files are either **byte-identical** copies of the original
-sources or differ **only** in (a) path constants, (b) Hugging Face token
-handling (env var instead of hard-coded literal), and (c) the `FILES_MAP`
-candidate dictionary in the reference-MIA runners (which teacher response
-files are scored — data wiring, not algorithm). No changes to the MIA / scoring
-/ training logic.
-
-| Release path                                       | Original path                                                              |
-|----------------------------------------------------|----------------------------------------------------------------------------|
-| `generation/generate_local_vllm.py`                | `NewScripts/generate_local_vllm.py`                                        |
-| `generation/run_local_gen.sh`                      | `NewScripts/run_local_gen.sh`                                              |
-| `generation/run_local_gen_GPTOSS.sh`               | `NewScripts/run_local_gen_GPTOSS.sh`                                       |
-| `generation/generate_teacher_vllm_fewshot.py`      | `scripts/generate_teacher_vllm_fewshot.py`                                 |
-| `generation/run_fewshot_gen.sh`                    | `scripts/sbatch_run_.sbatch` (+ `scripts/sbatch_generateData_fewshot.sbatch`) |
-| `generation/FewShotPrompts/*.txt`                  | `scripts/FewShotPrompts/*.txt`                                             |
-| `data/omi_cot_fewshot/*`                           | `scripts/teacher_gen_outputs_s1_fewshot/*`                                 |
-| `training/train_qwen.py`                           | `scripts/FINALGITHUBALLSCRIPTS/training_script/run_a.py`                   |
-| `training/train_qwen.sh`                           | `scripts/FINALGITHUBALLSCRIPTS/training_script/run_a.sh`                   |
-| `training/train_llama_gemma.py`                    | `scripts/FINALGITHUBALLSCRIPTS/training_script/run_b.py`                   |
-| `training/train_llama_gemma.sh`                    | `scripts/FINALGITHUBALLSCRIPTS/training_script/run_b.sh`                   |
-| `reference_mia/run_controlled.py`                  | `NewScripts/run_reference_attack_server.py`                                |
-| `reference_mia/run_wild.py`                        | `NewScripts/run_reference_attack_server.py`                                |
-| `reference_mia/run_omi_cot.py`                     | `NewScripts/run_reference_attack_server.py` (few-shot `FILES_MAP` only)    |
-| `o1_detection/run_o1_ascii_unicode.py`             | `NewScripts/run_reference_attack_o1_controlled.py`                         |
-| `o1_detection/run_o1_ascii_unicode.sh`             | `NewScripts/run_reference_attack_o1_controlled.sh`                         |
-| `data/training/Teacher=*.jsonl`                    | `scripts/FINALGITHUBALLSCRIPTS/SFTDatasets{,OLDD}/Teacher=*.jsonl`         |
-| `data/training/o1__s1k__chat__openai_responses.jsonl` | `scripts/FINALGITHUBALLSCRIPTS/SFTDatasetsOLDD/o1__s1k__chat__openai_responses.jsonl` (o1 SFT corpus for the o1-distilled controlled students) |
-| `data/MIADatasets/*` (controlled candidates)       | cleaned 200-row teacher responses (Gemma/Llama/GPT-OSS/Qwen, OMI+s1)       |
-| `data/wild/*` (Gemma/Llama/GPT-OSS)                | identical to `data/MIADatasets/` (same 3 teachers)                        |
-| `data/wild/*` (Claude/R1/o1/o3/QwQ-Preview/Qwen-3-235B) | `scripts/collected_outputs/` + `NewScripts/R1testUnicode_upload/collected_outputs/` |
-| `data/o1/*`                                        | `NewScripts/O1_UnicodeandASCII/*`                                          |
-| `ReferenceMIAResults/controlled/*.json`            | `scripts/FINALGITHUBALLSCRIPTS/ReferenceMIAResults/*.json`                 |
-| `ReferenceMIAResults/ModelsInTheWild/...*__results.json` | `NewScripts/ModelsinTheWildOutputs/*__REF__*/*__results.json`        |
-
 ## Reproducing each headline result
 
 Every result is reproducible from the shipped data without re-running GPU
