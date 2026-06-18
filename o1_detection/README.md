@@ -41,3 +41,12 @@ array in the `.sh` to add or remove pairs.
 Inputs come from `../data/o1/` (override via `DATASETS_DIR=...`).
 Outputs land per-pair under `../outputs/o1_detection/` (override via
 `BASE_OUTDIR=...`).
+
+## Open-world DeepSeek-R1 o1 diagnostic
+
+The open-world DeepSeek-R1 o1 gap uses **DeepSeek-MoE-16B-Base** as the reference.
+Because DeepSeek-R1 is a 671B model we ran on **8×H200**, R1 and MoE-16B-Base were
+scored **separately** and combined offline; that result ships pre-computed in
+`../ReferenceMIAResults/OpenQuestions/o1AsciiUnicode/`. To regenerate it you can
+add the `DeepSeek-R1 | deepseek-moe-16b-base` pair to the `MODELS=( ... )` array in
+`run_o1_ascii_unicode.sh`, but it needs that scale of GPU.
