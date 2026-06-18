@@ -29,7 +29,7 @@ controlled / few-shot `FILES_MAP`. They could be unified into one runner + a
 ## Pairs manifests
 
 `pairs_controlled_data.csv` and `pairs_wild.csv` are three-column CSVs
-(`target,reference`) read by the `.sh` launchers. For XCoder, use
+(`target,reference,dtype`) read by the `.sh` launchers. For XCoder, use
 `pairs_xcoder.csv` with `DATASETS_DIR=../data/wild` — `run_wild.sh` then
 auto-activates the 11-teacher pool (adds Qwen-3-235B) via
 `data/wild/_files_map_xcoder.json`.
