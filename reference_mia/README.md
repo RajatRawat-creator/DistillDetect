@@ -19,9 +19,8 @@ the target was distilled from the teacher who produced `x`.
 | `run_wild.py`           | Scoring wild R1-distill / open-weight models    | `pairs_wild.csv`        |
 | `run_omi_cot.py`        | Scoring the OMI-CoT students (few-shot probe)   | `pairs_omi_cot.csv`     |
 
-All three share the same MIA core (`ModelWrapper` / stride loss / `load_jsonl`)
-derived from `NewScripts/run_reference_attack_server.py`; they differ in their
-`FILES_MAP` (candidate pool) and minor options. `run_wild.py` is the most current
+All three share the same MIA core (`ModelWrapper` / stride loss / `load_jsonl`);
+they differ in their `FILES_MAP` (candidate pool) and minor options. `run_wild.py` is the most current
 (supports `--dtype auto`, `--attn_implementation`, and a `_files_map.json` drop-in
 pool override); `run_controlled.py` / `run_omi_cot.py` are earlier forks with the
 controlled / few-shot `FILES_MAP`. They could be unified into one runner + a
@@ -88,8 +87,8 @@ where `fewshot_subdir` is the student's folder under `$FEWSHOT_BASE`
 (default `../data/omi_cot_fewshot`). The launcher points `--datasets_dir` at
 that subfolder per student. Regenerate the candidate datasets with
 `generation/run_fewshot_gen.sh`. Downstream, the result JSONs correspond to the
-paper's `OMICoT/Reference_Fewshot` outputs (analyzer:
-`scripts/FINALGITHUBALLSCRIPTS/MethodEvaluationScripts/eval_omicot_reference.py`).
+paper's `OMICoT/Reference_Fewshot` outputs (reproduced by the CPU-only scripts in
+`../ReferenceMIAResults/scripts/`).
 
 ## DeepSeek-MoE-16B reference (open-world DeepSeek-R1)
 

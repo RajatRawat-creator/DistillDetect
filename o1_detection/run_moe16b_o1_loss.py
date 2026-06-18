@@ -7,8 +7,8 @@ the numbers are comparable to the other models' o1-detection runs.
 
 NOTE on context: MoE-16B's context window is 4096, far below the 32768 the larger
 o1-detection models used. get_model_ctx_limit caps the effective max_length to
-MoE's 4096 automatically (same behaviour as the R1TestGitHub MoE o1 run); MoE's
-per-token answer NLL is therefore scored over a 4096 window via the stride loop.
+MoE's 4096 automatically; MoE's per-token answer NLL is therefore scored over a
+4096 window via the stride loop.
 
 Run:  python run_moe16b_o1_loss.py     (LIMIT_PER_DATASET=2 for a smoke test)
 """

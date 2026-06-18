@@ -5,8 +5,8 @@ Shared loader for deepseek-ai/deepseek-moe-16b-base.
 Importing this module (BEFORE importing run_wild / run_o1_ascii_unicode) sets the
 hub-kernel env vars and applies the compatibility monkeypatches that the DeepSeek
 remote modeling code needs. The patches are lifted verbatim from the proven
-NewScripts/run_deepseekmoe16b_loss_collected.py (which ran this exact model); the
-FP8 ones are no-ops for a bf16 load but are kept for safety.
+MoE-16B loss script that ran this exact model; the FP8 ones are no-ops for a
+bf16 load but are kept for safety.
 
 Use:
     import moe16b_loader as moe          # sets env + applies patches, imports transformers

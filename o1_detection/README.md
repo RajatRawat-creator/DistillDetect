@@ -12,7 +12,7 @@ non-distilled model won't.
 
 | File                          | Notes                                              |
 |-------------------------------|----------------------------------------------------|
-| `run_o1_ascii_unicode.py`     | Byte-identical copy of `NewScripts/run_reference_attack_o1_controlled.py` |
+| `run_o1_ascii_unicode.py`     | The o1 ASCII-vs-Unicode reference-MIA scorer |
 | `run_o1_ascii_unicode.sh`     | Slurm wrapper iterating the same target/reference sweep used in the paper |
 
 Per-file `transform` in `FILES_MAP`:

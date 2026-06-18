@@ -16,8 +16,6 @@ Configuration:
 
 NOTE: Gemma has a 262K-token vocab; long sequences trigger OOM on
 single-GPU H200, so block_size is held at 4096 for Gemma too.
-
-Equivalent to the original FINALGITHUBALLSCRIPTS/training_script/run_b.py.
 """
 
 import os, sys, gc, torch

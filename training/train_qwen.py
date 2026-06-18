@@ -18,8 +18,6 @@ Configuration:
     Edit the constants block below to change students, dataset dir,
     output dir, or hyperparameters. Authentication for gated Hugging
     Face models is read from the HF_TOKEN environment variable.
-
-Equivalent to the original FINALGITHUBALLSCRIPTS/training_script/run_a.py.
 """
 
 import os, sys, gc, torch
