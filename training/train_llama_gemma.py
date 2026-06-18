@@ -14,10 +14,6 @@ Configuration:
     Edit STUDENT_CONFIGS / DATASETS_DIR / OUTPUT_BASE_DIR below. Gated
     Hugging Face models (Llama, Gemma) require HF_TOKEN in env.
 
-NOTE: Gemma has a 262K-token vocab; long sequences trigger OOM on
-single-GPU H200, so block_size is held at 4096 for Gemma too.
-"""
-
 import os, sys, gc, torch
 from dataclasses import dataclass, field
 from typing import Optional
