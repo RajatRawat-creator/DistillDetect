@@ -8,7 +8,7 @@ score(x) = loss_target(x) - loss_ref(x)
 ```
 
 The target is the model we want to test. The reference is a base model
-known not to have been trained on the candidate teacher's responses.
+ideally known not to have been trained on the candidate teacher's responses.
 Lower (more negative) `score(x)` means the target memorized the
 distribution more strongly than the reference — a stronger signal that
 the target was distilled from the teacher who produced `x`.
