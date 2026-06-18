@@ -1,9 +1,7 @@
 # Teacher response generation
 
 `generate_local_vllm.py` generates responses from a local model via vLLM on
-a JSONL of `question` records. Handles both plain chat models (Gemma, Llama,
-Qwen) and the GPT-OSS harmony format (analysis vs final channels parsed
-separately).
+a JSONL of `question` records. 
 
 It is one-model-at-a-time — you launch it once per (teacher, prompt set):
 
