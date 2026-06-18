@@ -15,7 +15,6 @@ won't.
 | `run_o1_ascii_unicode.py`     | The o1 ASCII-vs-Unicode reference-MIA scorer |
 | `run_o1_ascii_unicode.sh`     | Slurm wrapper iterating the same target/reference sweep used in the paper |
 | `run_o1_ascii_unicode_controlled.sh` | Sweep over the 4 controlled o1-distilled SFT students (the ground-truth positives in Table `o1_significance`) |
-| `run_moe16b_o1_loss.py`       | MoE-16B o1 scoring (for the DeepSeek-R1 open-question diagnostic) |
 
 Per-file `transform` in `FILES_MAP`:
 - `None`     — leave the parsed text as-is (e.g. `o1_..._unicode.jsonl`)

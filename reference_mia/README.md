@@ -90,19 +90,13 @@ that subfolder per student. Regenerate the candidate datasets with
 paper's `OMICoT/Reference_Fewshot` outputs (reproduced by the CPU-only scripts in
 `../ReferenceMIAResults/scripts/`).
 
-## DeepSeek-MoE-16B reference (open-world DeepSeek-R1)
+## DeepSeek-R1 (open-world, ref DeepSeek-MoE-16B-Base)
 
-`run_moe16b.sh` + `run_moe16b_wild_loss.py` score **DeepSeek-MoE-16B-Base** as the
-reference model for the open-world DeepSeek-R1 analysis (R1 has no clean
-same-family pre-distillation checkpoint, so MoE-16B is used as the base reference).
-They reuse `run_wild.py`'s `FILES_MAP` + `ModelWrapper`, but load the model through
-the shared **`../moe16b_loader.py`** rather than a plain `from_pretrained`.
-
-Why a separate loader: `deepseek-ai/deepseek-moe-16b-base` ships **custom remote
-modeling code** that no longer runs on current Transformers / torch. `moe16b_loader`
-applies the required compatibility shims **before `transformers` is imported** —
-e.g. restoring `is_torch_fx_available`, patching the FP8 integration internals,
-adding torch-2.6 PEP-585 schema-inference support, and normalizing the model's
-`rope_scaling` config. Loading MoE-16B the same way as the other models raises
-import/attribute errors, hence the dedicated loader (also used by
-`o1_detection/run_moe16b_o1_loss.py`).
+For the open-world DeepSeek-R1 analysis we use **DeepSeek-MoE-16B-Base** as the
+reference (R1 has no clean same-family pre-distillation checkpoint). DeepSeek-R1
+is a 671B model — far larger than the other wild targets — so we ran it on
+**8×H200** and scored R1 and MoE-16B-Base **separately**, then combined their
+per-row losses offline; the result ships pre-computed in
+`../ReferenceMIAResults/OpenQuestions/` (see that folder's README). To regenerate
+it you can add the `DeepSeek-R1, deepseek-moe-16b-base` pair to `pairs_wild.csv`,
+but it needs that scale of GPU.
