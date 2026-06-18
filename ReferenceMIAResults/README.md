@@ -38,9 +38,7 @@ python plot_figures.py                        # regenerate the paper's figures -
 
 Each `reproduce_*.py` ends with a self-checking `VERIFICATION: N/N checks PASS`
 that asserts every value against the paper; metric and method definitions are in
-each script's header. Only **our** reference-based results are verified —
-baselines (length-matching, string methods, non-reference MIA, R1-answers-only)
-are out of scope and not recomputed here. `plot_figures.py` regenerates the
+each script's header. Only **our** reference-based results are verified. `plot_figures.py` regenerates the
 figures from the main paper into `figures/` (gitignored `*.png` / `*.pdf`).
 
 ## Rebuilding the tree (`gather_results.py`)
