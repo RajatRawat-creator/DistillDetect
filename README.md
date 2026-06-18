@@ -22,7 +22,6 @@ and o1 number in the paper is reproduced **CPU-only** from the gathered ref-norm
 JSONs by the self-checking scripts in `ReferenceMIAResults/scripts/` (see
 `ReferenceMIAResults/README.md`).
 
-All datasets ship in `data/`.
 
 ## Layout
 
