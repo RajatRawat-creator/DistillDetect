@@ -29,6 +29,7 @@ JSONs by the self-checking scripts in `ReferenceMIAResults/scripts/` (see
 DistillDetectRelease/
 ├── README.md
 ├── requirements.txt
+├── moe16b_loader.py                  # shared DeepSeek-MoE-16B loader (compat shims; used by the MoE-16B runners)
 ├── generation/                       # Stage 1: teacher response generation (vLLM)
 │   ├── generate_local_vllm.py
 │   ├── run_local_gen.sh             
@@ -48,13 +49,17 @@ DistillDetectRelease/
 │   ├── run_wild.sh
 │   ├── run_omi_cot.py                #   For OMI-CoT students (few-shot probe)
 │   ├── run_omi_cot.sh
+│   ├── run_moe16b_wild_loss.py       #   DeepSeek-MoE-16B wild ref-MIA (open-question R1 reference)
+│   ├── run_moe16b.sh                 #   MoE-16B launcher (drives the wild + o1 MoE loss pipelines)
 │   ├── pairs_controlled_data.csv     #   target,reference manifest (controlled students)
 │   ├── pairs_wild.csv                #   target,reference manifest (R1-distills, s1.1, QwQ, GPT-OSS)
 │   ├── pairs_xcoder.csv              #   X-Coder only (activates 11-teacher pool, +Qwen-3-235B)
 │   └── pairs_omi_cot.csv             #   target,reference,fewshot_subdir (4 OMI-CoT students)
 ├── o1_detection/                     #   Stage 4: o1 ASCII-vs-Unicode detection
 │   ├── run_o1_ascii_unicode.py
-│   └── run_o1_ascii_unicode.sh
+│   ├── run_o1_ascii_unicode.sh
+│   ├── run_o1_ascii_unicode_controlled.sh  #   controlled o1-distilled student sweep
+│   └── run_moe16b_o1_loss.py         #   MoE-16B o1 ASCII/Unicode scoring
 ├── ReferenceMIAResults/              #   Gathered ref-norm results + CPU-only reproduction
 │   ├── controlled/  OMI_COT/  ModelsInTheWild/  OpenQuestions/   # all ref-norm JSONs
 │   ├── scripts/                      #   reproduce_*.py (tables, LOSO/LOTO, o1, open-world) + plot_figures.py
