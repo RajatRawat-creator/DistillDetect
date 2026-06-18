@@ -17,7 +17,7 @@ The pipeline runs end-to-end in four stages:
    default(ASCII) vs unicode reference MIA.
 
 **Results & significance reproduction** (`ReferenceMIAResults/`) — every
-teacher-identification, threshold-generalization (LOSO / leave-one-teacher-out),
+teacher-identification, threshold-generalization (leave-one-student-out / leave-one-teacher-out),
 and o1 number in the paper is reproduced **CPU-only** from the gathered ref-norm
 JSONs by the self-checking scripts in `ReferenceMIAResults/scripts/` (see
 `ReferenceMIAResults/README.md`).
