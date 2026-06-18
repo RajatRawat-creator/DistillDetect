@@ -1,6 +1,6 @@
 # Reference-normalized loss MIA
 
-Two scripts, both implementing the same single-target reference-normalized
+Three scripts, all implementing the same single-target reference-normalized
 membership-inference attack:
 
 ```
@@ -28,7 +28,7 @@ controlled / few-shot `FILES_MAP`. They could be unified into one runner + a
 
 ## Pairs manifests
 
-`pairs_controlled_data.csv` and `pairs_wild.csv` are two-column CSVs
+`pairs_controlled_data.csv` and `pairs_wild.csv` are three-column CSVs
 (`target,reference`) read by the `.sh` launchers. For XCoder, use
 `pairs_xcoder.csv` with `DATASETS_DIR=../data/wild` — `run_wild.sh` then
 auto-activates the 11-teacher pool (adds Qwen-3-235B) via
@@ -39,7 +39,7 @@ auto-activates the 11-teacher pool (adds Qwen-3-235B) via
   student family was fine-tuned from.
 - **Wild**: target and reference are both HF model ids.
 
-## Required args (both scripts)
+## Required args (all three scripts)
 
 - `--target_model`: HF id or local path of the target model.
 - `--ref_model`: HF id or local path of the reference model.
