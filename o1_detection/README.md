@@ -36,7 +36,7 @@ sbatch o1_detection/run_o1_ascii_unicode.sh
 ```
 
 The sweep iterates the same (target, reference) pairs used in the paper
-(R1-distills, s1.1, gemma family, gpt-oss). Edit the `MODELS=( ... )`
+(R1-distills, s1.1, gemma family, gpt-oss, llama family). Edit the `MODELS=( ... )`
 array in the `.sh` to add or remove pairs.
 
 Inputs come from `../data/o1/` (override via `DATASETS_DIR=...`).
