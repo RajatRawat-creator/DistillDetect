@@ -54,9 +54,6 @@ plot paths keep resolving. By default it writes a gitignored
 Two DeepSeek-R1 (ref DeepSeek-MoE-16B-Base) files are **not** gathered (manifest
 `source="combine"`). DeepSeek-R1 is a 671B model that we ran on **8×H200**, so we
 scored DeepSeek-R1 and DeepSeek-MoE-16B-Base **separately** and combined their
-per-row losses offline with `_build_from_collected_losses.py` (rather than running
-them as one pair through `run_wild.py`). These results ship pre-computed and are
-intentionally static — a fresh MoE-16B run is not numerically comparable. To
-regenerate from scratch you can add the `DeepSeek-R1, deepseek-moe-16b-base` pair
+per-row losses offline with with a script. To regenerate from scratch you can add the `DeepSeek-R1, deepseek-moe-16b-base` pair
 to `reference_mia/pairs_wild.csv`, but it needs that scale of GPU (~8×H200 for
 DeepSeek-R1 alone).
