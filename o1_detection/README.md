@@ -1,12 +1,12 @@
 # o1 ASCII vs Unicode reference MIA
 
-Detects o1-distillation by exploiting that OpenAI's o1 chat API returns
-non-ASCII codepoints as `\uXXXX` escape sequences. We compare two serializations
-of the same outputs: **ASCII** (each non-ASCII codepoint left as its literal
-`\uXXXX` escape; file `o1__responses_ascii.jsonl`) vs **Unicode** (raw UTF-8;
-`o1_openmath__responses_unicode.jsonl`). A model distilled from o1 scores the
-ASCII (`\uXXXX`-escaped) variant worse than the raw-UTF-8 variant; a
-non-distilled model won't.
+Detects o1-distillation with an ASCII-vs-Unicode reference MIA. We compare two
+serializations of the same o1 outputs: **ASCII** (each non-ASCII codepoint
+escaped to its literal `\uXXXX` form; file `o1__responses_ascii.jsonl`) vs
+**Unicode** (raw UTF-8; `o1_openmath__responses_unicode.jsonl`). A model
+distilled from o1 has absorbed o1's distinctive non-ASCII characters, so it
+scores the ASCII variant **worse** than the raw-UTF-8 one; a non-distilled model
+won't.
 
 ## Scripts
 
