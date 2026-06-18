@@ -1,9 +1,7 @@
 # Distillation Detection via Reference-Normalized Loss MIA
 
 This repository is a release of the code used in our paper on
-detecting whether a student LLM was distilled from a given teacher (e.g.
-DeepSeek R1, GPT-OSS-120B, Gemma-3-27B-it, Llama-3.3-70B-Instruct, Qwen-3-8B,
-etc.).
+detecting whether a student LLM was distilled from a given teacher.
 
 The pipeline runs end-to-end in four stages:
 
