@@ -72,7 +72,7 @@ when the curated layout changes, via `_gen_results_manifest.py`.
 results referenced to DeepSeek-MoE-16B —
 `OpenQuestions/ReferenceMIA/.../DeepSeek-R1__results.json` and
 `OpenQuestions/o1AsciiUnicode/DeepSeek-R1__o1_ascii_unicode__results.json`. These
-are built by `_build_from_collected_losses.py` from the OLD MoE-16B collected
+are built by `_build_from_collected_losses.py` from the original MoE-16B collected
 losses and are intentionally static (a fresh MoE-16B run is not comparable; see the
 builder's header). They ship checked-in and are left untouched.
 

@@ -12,8 +12,8 @@ committed location with the exact committed filename (no naming rules to encode)
 
 Files carrying `source_target_json`/`note` are MoE-16B combine artifacts (the two
 DeepSeek-R1 ref:MoE-16B results): built by `_build_from_collected_losses.py` from
-OLD out-of-tree collected losses, intentionally static (see project note
-moe16b_o1_scoring_incompat). They are recorded with source="combine" and skipped
+the original out-of-tree collected losses, intentionally static (a fresh MoE-16B
+run is not numerically comparable). They are recorded with source="combine" and skipped
 by gather.
 """
 import json

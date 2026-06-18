@@ -1,8 +1,8 @@
 {
   "model_name": "deepseek-ai/DeepSeek-R1",
   "ref_model": "deepseek-ai/deepseek-moe-16b-base",
-  "source_target_json": "R1TestGitHub/outputs_moe16b/DeepSeek-R1__o1_losses (1).json",
-  "source_ref_json": "R1TestGitHub/outputs_moe16b/deepseek-moe-16b-base__o1_losses.json",
+  "source_target_json": "DeepSeek-R1__o1_losses (1).json",
+  "source_ref_json": "deepseek-moe-16b-base__o1_losses.json",
   "results": {
     "Ref-Norm Loss": {
       "o1 (OMI, ASCII)": [

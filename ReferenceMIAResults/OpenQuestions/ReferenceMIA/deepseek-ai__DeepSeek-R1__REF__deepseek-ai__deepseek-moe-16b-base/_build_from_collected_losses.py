@@ -6,18 +6,18 @@ This subfolder holds the data behind the published two-panel figure
 `outputs/ranked_style_figures/r1_refmia_s1_with_o1_ascii_ranked.png`
 (left = DeepSeek-R1 reference-MIA, s1 prompts; right = o1 ASCII-vs-Unicode gap).
 
-IMPORTANT — this is the OLD MoE-16B scoring run. Per project note
-[[moe16b_o1_scoring_incompat]], re-running the MoE-16B losses with the current
-DistillDetectRelease scripts produces values that are NOT comparable to this old
-R1 data, so the published figure must be reproduced from THIS data, not from a
-fresh reference_mia run. `DeepSeek-R1__results.json` below is therefore derived
-purely by subtracting the OLD per-row losses (no model is re-run): it only
+IMPORTANT — these losses come from the original MoE-16B scoring run. Re-running
+the MoE-16B losses with the current DistillDetectRelease scripts produces values
+that are NOT comparable to this data, so the published figure must be reproduced
+from THIS data, not from a fresh reference_mia run. `DeepSeek-R1__results.json`
+below is therefore derived purely by subtracting the original per-row losses (no
+model is re-run): it only
 precomputes the exact `target - reference` step the plotter already did at draw
 time, paired by row index.
 
-Source files (in the working tree, outside the release):
-  target : R1testUnicode/outputs_r1_collected/DeepSeek-R1__collected_losses.json
-  ref    : NewScripts/outputs_deepseekmoe16b_collected/deepseek-moe-16b-base__collected_losses.json
+Source files (from the original MoE-16B scoring run; not shipped in this release):
+  target : DeepSeek-R1__collected_losses.json
+  ref    : deepseek-moe-16b-base__collected_losses.json
 
 Each `*_collected_losses.json` stores, per candidate teacher key,
 `results[key]["rows"] = [{idx, loss, ok, ...}]`. We keep rows with ok==True and
@@ -38,8 +38,8 @@ HERE = Path(__file__).resolve().parent
 # repo root = .../distill_detect  (5 levels up from this file)
 ROOT = HERE.parents[4]
 
-TGT = ROOT / "R1testUnicode/outputs_r1_collected/DeepSeek-R1__collected_losses.json"
-REF = ROOT / "NewScripts/outputs_deepseekmoe16b_collected/deepseek-moe-16b-base__collected_losses.json"
+TGT = ROOT / "DeepSeek-R1__collected_losses.json"
+REF = ROOT / "deepseek-moe-16b-base__collected_losses.json"
 OUT = HERE / "DeepSeek-R1__results.json"
 
 
@@ -82,9 +82,6 @@ def main():
     blob = {
         "model_name": "DeepSeek-R1",
         "ref_model": "deepseek-ai/deepseek-moe-16b-base",
-        "note": "Ref-norm losses derived from OLD collected-losses runs; see "
-                "_build_from_collected_losses.py. Not comparable to fresh "
-                "DistillDetectRelease MoE-16B runs.",
         "source_target_json": str(TGT.relative_to(ROOT)),
         "source_ref_json": str(REF.relative_to(ROOT)),
         "results": {"Ref-Norm Loss": ref_norm},

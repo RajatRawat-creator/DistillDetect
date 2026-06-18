@@ -18,9 +18,9 @@ Usage:
     python gather_results.py --in-place            # write into ReferenceMIAResults/ itself
 
 Two DeepSeek-R1 ref:MoE-16B files are combine artifacts (source="combine" in the
-manifest): they are built by their own `_build_from_collected_losses.py` from OLD
-out-of-tree losses and are intentionally NOT regenerated here (see project note
-moe16b_o1_scoring_incompat). gather lists them but never (re)writes them.
+manifest): they are built by their own `_build_from_collected_losses.py` from the
+original out-of-tree losses and are intentionally NOT regenerated here (a fresh
+MoE-16B run is not numerically comparable). gather lists them but never (re)writes them.
 """
 import argparse
 import glob

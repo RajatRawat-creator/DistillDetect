@@ -1,9 +1,8 @@
 {
   "model_name": "DeepSeek-R1",
   "ref_model": "deepseek-ai/deepseek-moe-16b-base",
-  "note": "Ref-norm losses derived from OLD collected-losses runs; see _build_from_collected_losses.py. Not comparable to fresh DistillDetectRelease MoE-16B runs.",
-  "source_target_json": "R1testUnicode/outputs_r1_collected/DeepSeek-R1__collected_losses.json",
-  "source_ref_json": "NewScripts/outputs_deepseekmoe16b_collected/deepseek-moe-16b-base__collected_losses.json",
+  "source_target_json": "DeepSeek-R1__collected_losses.json",
+  "source_ref_json": "deepseek-moe-16b-base__collected_losses.json",
   "results": {
     "Ref-Norm Loss": {
       "Claude Opus 4.5 (OMI)": [
