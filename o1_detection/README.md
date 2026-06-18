@@ -5,7 +5,7 @@ non-ASCII codepoints as `\uXXXX` escape sequences. We compare two serializations
 of the same outputs: **ASCII** (each non-ASCII codepoint left as its literal
 `\uXXXX` escape; file `o1__responses_ascii.jsonl`) vs **Unicode** (raw UTF-8;
 `o1_openmath__responses_unicode.jsonl`). A model distilled from o1 scores the
-ASCII (`\uXXXX`-escaped) variant better than the raw-UTF-8 variant; a
+ASCII (`\uXXXX`-escaped) variant worse than the raw-UTF-8 variant; a
 non-distilled model won't.
 
 ## Scripts
