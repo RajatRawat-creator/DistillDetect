@@ -100,4 +100,17 @@ python generate_local_vllm.py \
     --dtype auto
 echo "=== Llama 3.3 done ==="
 
+echo "=== Model 3: Qwen 3 8B ==="
+# Qwen-3-8B is a reasoning model (emits a thinking trace via its chat template);
+# raise --max_new_tokens if traces get cut off. 8B fits a single GPU (TP=1).
+python generate_local_vllm.py \
+    --model Qwen/Qwen3-8B \
+    --questions_path "$QUESTIONS" \
+    --out_dir "$OUT_DIR" \
+    --max_new_tokens 4096 \
+    --max_model_len 8192 \
+    --gpu_memory_utilization 0.90 \
+    --dtype bfloat16
+echo "=== Qwen 3 8B done ==="
+
 echo "=== All done. Outputs in: $OUT_DIR ==="
