@@ -14,7 +14,7 @@ The pipeline runs end-to-end in four stages:
    model (controlled student OR wild model), score it against every
    candidate teacher's responses, normalized by a base reference model.
 4. **o1 ASCII / Unicode detection** (`o1_detection/`) — paired
-   default(ASCII)-vs-unicode reference MIA.
+   default(ASCII) vs unicode reference MIA.
 
 **Results & significance reproduction** (`ReferenceMIAResults/`) — every
 teacher-identification, threshold-generalization (LOSO / leave-one-teacher-out),
