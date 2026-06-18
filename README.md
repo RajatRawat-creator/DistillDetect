@@ -34,9 +34,9 @@ DistillDetectRelease/
 │   ├── run_local_gen.sh             
 │   ├── run_local_gen_GPTOSS.sh      
 │   ├── generate_teacher_vllm_fewshot.py  # OMI-CoT few-shot candidate generation
-│   ├── run_fewshot_gen.sh           #   all-teachers few-shot sweep
-│   └── FewShotPrompts/              #   per-student few-shot prompt templates (.txt)
-├── training/                         # Stage 2: SFT controlled students
+│   ├── run_fewshot_gen.sh            #   all-teachers few-shot sweep
+│   └── FewShotPrompts/               #   per-student few-shot prompt templates (.txt)
+├── training/                         #   Stage 2: SFT controlled students
 │   ├── train_qwen.py                 #   Qwen-2.5-1.5B + Qwen-2.5-3B
 │   ├── train_qwen.sh
 │   ├── train_llama_gemma.py          #   Llama-3.2-3B-Instruct + Gemma-3-4B-PT
@@ -52,14 +52,14 @@ DistillDetectRelease/
 │   ├── pairs_wild.csv                #   target,reference manifest (R1-distills, s1.1, QwQ, GPT-OSS)
 │   ├── pairs_xcoder.csv              #   X-Coder only (activates 11-teacher pool, +Qwen-3-235B)
 │   └── pairs_omi_cot.csv             #   target,reference,fewshot_subdir (4 OMI-CoT students)
-├── o1_detection/                     # Stage 4: o1 ASCII-vs-Unicode detection
+├── o1_detection/                     #   Stage 4: o1 ASCII-vs-Unicode detection
 │   ├── run_o1_ascii_unicode.py
 │   └── run_o1_ascii_unicode.sh
-├── ReferenceMIAResults/              # Gathered ref-norm results + CPU-only reproduction
+├── ReferenceMIAResults/              #   Gathered ref-norm results + CPU-only reproduction
 │   ├── controlled/  OMI_COT/  ModelsInTheWild/  OpenQuestions/   # all ref-norm JSONs
 │   ├── scripts/                      #   reproduce_*.py (tables, LOSO/LOTO, o1, open-world) + plot_figures.py
 │   └── README.md
-└── data/                             # ALL datasets (no external download)
+└── data/                             #   ALL datasets (no external download)
     ├── README.md
     ├── training/                     #   Teacher SFT data
     ├── wild/                         #   wild MIA inputs (10 teachers + Qwen-3-235B for XCoder; _files_map_xcoder.json)
