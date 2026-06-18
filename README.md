@@ -20,8 +20,7 @@ The pipeline runs end-to-end in four stages:
 teacher-identification, threshold-generalization (LOSO / leave-one-teacher-out),
 and o1 number in the paper is reproduced **CPU-only** from the gathered ref-norm
 JSONs by the self-checking scripts in `ReferenceMIAResults/scripts/` (see
-`ReferenceMIAResults/README.md`). This replaces the old `classifier/` and
-`significance/` folders.
+`ReferenceMIAResults/README.md`).
 
 All datasets ship in `data/`.
 
@@ -157,7 +156,7 @@ copy its `*__results.json` into `ReferenceMIAResults/ModelsInTheWild/ReferenceMI
 
 ## Cluster / environment notes
 
-The GPU `.sh` launchers were written for a SLURM cluster. They no longer hardcode
+The GPU `.sh` launchers were written for a SLURM cluster. They do not hardcode
 any machine-specific path — the spots you may need to change are marked with
 `# EDIT:` comments and/or honor environment-variable overrides:
 

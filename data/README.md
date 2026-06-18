@@ -12,10 +12,10 @@ All datasets ship inside this repo. No external download step.
 | `MIADatasets/`      | Controlled-model reference-MIA candidate responses (4 teachers × OMI/s1, 200 rows, cleaned) | `reference_mia/run_controlled.py` |
 | `omi_cot_fewshot/`  | Per-student few-shot reference-MIA candidate responses for OMI-CoT students | OMI-CoT reference MIA (Reference_Fewshot) |
 
-> The pre-computed reference-MIA **result** JSONs (formerly `data/reference_mia/`
-> and `data/classifier/`) now live under `../ReferenceMIAResults/`, alongside the
-> CPU-only reproduction scripts. This `data/` folder holds only the **inputs**
-> (candidate responses, SFT/probe data) consumed by the GPU runners.
+> The pre-computed reference-MIA **result** JSONs live under
+> `../ReferenceMIAResults/`, alongside the CPU-only reproduction scripts. This
+> `data/` folder holds only the **inputs** (candidate responses, SFT/probe data)
+> consumed by the GPU runners.
 
 ## `training/` provenance
 
@@ -25,7 +25,7 @@ follow `{question, response, ...}`.
 
 Files in this release:
 
-- `Teacher=Nvidia-Llama-3.3-70B-Instruct_Data=OMI(1K)_Template=Chat.jsonl` (the corrected/active Nvidia-Llama dataset)
+- `Teacher=Nvidia-Llama-3.3-70B-Instruct_Data=OMI(1K)_Template=Chat.jsonl` (the Nvidia-Llama OMI chat dataset)
 - `Teacher=Nvidia-Llama-3.3-70B-Instruct_Data=OMI(918)_Template=OMI_COT.jsonl` (the OMI CoT-templated variant)
 - `Teacher=Nvidia-Llama-3.3-70B-Instruct_Data=S1_Template=Chat.jsonl`
 - `Teacher=GPT-OSS-120B_Data=OMI(1K)_Template=Chat.jsonl`
