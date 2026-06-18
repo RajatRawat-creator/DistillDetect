@@ -34,7 +34,7 @@ QwQ-32B-Preview, o1, o3**. **Qwen-3-235B** is included only for the X-Coder
 OMI and 200 s1 questions, and each row is
 `{teacher_model, prompt_id, input_source, prompt_format, question, response}`
 (QwQ uses `output`). Closed-API outputs (Claude, OpenAI) were produced via vendor
-APIs and included verbatim — redistribution is subject to each vendor's TOS.
+APIs.
 
 > **Truncation.** The reference-MIA runners score only the first 2,048 answer
 > tokens (`--max_answer_tokens 2048`), so long reasoning traces contribute only
