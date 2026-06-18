@@ -26,7 +26,7 @@ sbatch generation/run_local_gen_GPTOSS.sh
 One JSONL per (model, questions file) under `--out_dir`. Each row:
 
 ```json
-{"model_name": "...", "question": "...", "response": "...", "reasoning": "..."}
+{"model": "...", "question": "...", "response": "...", "reasoning": "..."}
 ```
 
 The output JSONL is the input to `training/` (SFT).
@@ -62,6 +62,6 @@ OMI-CoT reference MIA (the `Reference_Fewshot` condition).
 ## Wild generation
 
 Wild model generation (DeepSeek R1 distills, QwQ, etc.) used external API
-services (OpenRouter, Fireworks) and is not included in this release. The
+services (e.g., OpenRouter) and is not included in this release. The
 prepared MIA inputs are in `data/wild/` and are scored directly by
 `reference_mia/run_wild.py`.

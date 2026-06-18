@@ -147,7 +147,7 @@ run the corresponding stage first.
 | **Reference MIA — XCoder** (11-teacher pool, +Qwen-3-235B) | `DATASETS_DIR=../data/wild PAIRS_CSV=pairs_xcoder.csv sbatch reference_mia/run_wild.sh` | `data/wild/` (`_files_map_xcoder.json`) | GPU; auto-activates the 11-way pool |
 | **Reference MIA — OMI-CoT few-shot** (Reference_Fewshot) | `sbatch reference_mia/run_omi_cot.sh` | `data/omi_cot_fewshot/`, checkpoints | GPU; "+ in-context exemplars from S" |
 | **o1 ASCII-vs-Unicode detection** | `sbatch o1_detection/run_o1_ascii_unicode.sh` | `data/o1/` | GPU |
-| **(Re)generate teacher responses** | `sbatch generation/run_local_gen.sh` (+ `_GPTOSS.sh`) | your question JSONL | GPU; optional — data ships pre-computed |
+| **(Re)generate teacher responses** | `sbatch generation/run_local_gen.sh` (+ `run_local_gen_GPTOSS.sh`) | your question JSONL | GPU; optional — data ships pre-computed |
 | **(Re)generate OMI-CoT few-shot candidates** | `sbatch generation/run_fewshot_gen.sh` | `generation/FewShotPrompts/` | GPU; rebuilds `data/omi_cot_fewshot/` |
 
 GPU stages write to `outputs/` (gitignored); the reproduction scripts above read the
