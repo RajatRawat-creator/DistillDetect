@@ -29,8 +29,7 @@ One JSONL per (model, questions file) under `--out_dir`. Each row:
 {"model_name": "...", "question": "...", "response": "...", "reasoning": "..."}
 ```
 
-The output JSONL is the input to `training/` (SFT) and is also reused by
-`reference_mia/` as the scoring corpus.
+The output JSONL is the input to `training/` (SFT).
 
 ## OMI-CoT few-shot generation
 
