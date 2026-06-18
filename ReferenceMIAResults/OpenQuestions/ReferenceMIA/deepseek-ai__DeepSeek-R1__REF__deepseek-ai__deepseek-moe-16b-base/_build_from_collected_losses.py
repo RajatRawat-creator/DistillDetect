@@ -76,6 +76,11 @@ def main():
 
     ref_norm = {}
     for key in sorted(set(tgt) & set(ref)):
+        # QwQ-32B (released Mar 2025) postdates DeepSeek-R1 (Jan 2025), so it
+        # cannot be R1's teacher; exclude it from the candidate pool (the paper's
+        # R1 figure ranks the 9-candidate pool incl. QwQ-32B-Preview, not QwQ-32B).
+        if key.split(" (")[0] == "QwQ-32B":
+            continue
         idxs = sorted(set(tgt[key]) & set(ref[key]))
         ref_norm[_collapse(key)] = [tgt[key][i] - ref[key][i] for i in idxs]
 
