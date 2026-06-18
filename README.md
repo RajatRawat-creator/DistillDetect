@@ -31,8 +31,8 @@ DistillDetectRelease/
 ├── requirements.txt
 ├── generation/                       # Stage 1: teacher response generation (vLLM)
 │   ├── generate_local_vllm.py
-│   ├── run_local_gen.sh              #   Gemma + Llama wrapper
-│   ├── run_local_gen_GPTOSS.sh       #   GPT-OSS wrapper (separate; longer ctx)
+│   ├── run_local_gen.sh             
+│   ├── run_local_gen_GPTOSS.sh      
 │   ├── generate_teacher_vllm_fewshot.py  # OMI-CoT few-shot candidate generation
 │   ├── run_fewshot_gen.sh           #   all-teachers few-shot sweep
 │   └── FewShotPrompts/              #   per-student few-shot prompt templates (.txt)
@@ -61,9 +61,9 @@ DistillDetectRelease/
 │   └── README.md
 └── data/                             # ALL datasets (no external download)
     ├── README.md
-    ├── training/                     #   Teacher SFT data (reused as MIA input)
+    ├── training/                     #   Teacher SFT data
     ├── wild/                         #   wild MIA inputs (10 teachers + Qwen-3-235B for XCoder; _files_map_xcoder.json)
-    ├── o1/                           #   o1 default-vs-unicode pairs
+    ├── o1/                           #   o1 default(ASCII) vs unicode pairs
     ├── MIADatasets/                  #   controlled reference-MIA candidate responses (200 rows)
     └── omi_cot_fewshot/              #   per-student few-shot candidate responses (OMI-CoT students)
 ```
@@ -83,7 +83,7 @@ The teacher JSONLs in `data/training/` are pre-computed. To regenerate
 from scratch (e.g. with a different sampling config):
 
 ```bash
-sbatch generation/run_local_gen.sh           # Gemma + Llama
+sbatch generation/run_local_gen.sh           # Gemma + Llama + Qwen
 sbatch generation/run_local_gen_GPTOSS.sh    # GPT-OSS-120B
 sbatch generation/run_fewshot_gen.sh         # OMI-CoT few-shot candidates (all teachers)
 ```
