@@ -52,8 +52,9 @@ plot paths keep resolving. By default it writes a gitignored
 `../../ReferenceMIAResults_rebuilt/` so you can `diff -r` before trusting it.
 
 Two DeepSeek-R1 (ref DeepSeek-MoE-16B-Base) files are **not** gathered (manifest
-`source="combine"`). DeepSeek-R1 is a 671B model that we ran on **8×H200**, so we
-scored DeepSeek-R1 and DeepSeek-MoE-16B-Base **separately** and combined their
-per-row losses offline with with a script. To regenerate from scratch you can add the `DeepSeek-R1, deepseek-moe-16b-base` pair
-to `reference_mia/pairs_wild.csv`, but it needs that scale of GPU (~8×H200 for
-DeepSeek-R1 alone).
+`source="combine"`): `DeepSeek-R1__results.json` is `R1 loss − MoE-16B loss`
+computed offline. DeepSeek-R1 is a 671B model that we ran on **8×H200**, so we
+scored DeepSeek-R1 and DeepSeek-MoE-16B-Base **separately** and subtracted their
+per-row losses rather than running them as one pair. To regenerate from scratch,
+add the `DeepSeek-R1, deepseek-moe-16b-base` pair to `reference_mia/pairs_wild.csv`
+and run it — but it needs that scale of GPU (~8×H200 for DeepSeek-R1 alone).

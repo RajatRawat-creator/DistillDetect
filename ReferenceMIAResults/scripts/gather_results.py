@@ -18,9 +18,10 @@ Usage:
     python gather_results.py --in-place            # write into ReferenceMIAResults/ itself
 
 Two DeepSeek-R1 ref:MoE-16B files are combine artifacts (source="combine" in the
-manifest): they are built by their own `_build_from_collected_losses.py` from the
-original out-of-tree losses and are intentionally NOT regenerated here (a fresh
-MoE-16B run is not numerically comparable). gather lists them but never (re)writes them.
+manifest): they were combined offline from separately-scored DeepSeek-R1 and
+MoE-16B losses (R1 ran on 8xH200) and are intentionally NOT regenerated here (a
+fresh MoE-16B run is not numerically comparable). gather lists them but never
+(re)writes them.
 """
 import argparse
 import glob
@@ -107,7 +108,7 @@ def main():
         for m in missing:
             print(f"     {m}")
     if skipped_combine:
-        print("\n  -- combine artifacts (rebuild via their _build_from_collected_losses.py) --")
+        print("\n  -- combine artifacts (shipped pre-computed; not regenerated here) --")
         for fp, dest in skipped_combine:
             print(f"     {dest}")
 

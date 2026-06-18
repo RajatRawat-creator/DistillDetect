@@ -11,8 +11,8 @@ checked-in relative path, so gather copies a freshly-computed output to the exac
 committed location with the exact committed filename (no naming rules to encode).
 
 Files carrying `source_target_json`/`note` are MoE-16B combine artifacts (the two
-DeepSeek-R1 ref:MoE-16B results): built by `_build_from_collected_losses.py` from
-the original out-of-tree collected losses, intentionally static (a fresh MoE-16B
+DeepSeek-R1 ref:MoE-16B results): combined offline from separately-scored
+DeepSeek-R1 and MoE-16B losses, intentionally static (a fresh MoE-16B
 run is not numerically comparable). They are recorded with source="combine" and skipped
 by gather.
 """
