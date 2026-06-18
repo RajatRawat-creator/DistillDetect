@@ -11,7 +11,7 @@ It is one-model-at-a-time — you launch it once per (teacher, prompt set):
 |--------------------------------------|--------------------|--------------------------------|
 | `google/gemma-3-27b-it`              | OMI, s1            | `run_local_gen.sh`             |
 | `nvidia/Llama-3.3-70B-Instruct-FP8`  | OMI, s1            | `run_local_gen.sh`             |
-| `Qwen/Qwen3-8B`                      | OMI, s1            | adapt `run_local_gen.sh`       |
+| `Qwen/Qwen3-8B`                      | OMI, s1            | `run_local_gen.sh`       |
 | `openai/gpt-oss-120b`                | OMI, s1            | `run_local_gen_GPTOSS.sh`      |
 
 The `.sh` wrappers are Slurm sbatch launchers. Export `HF_TOKEN` in the
