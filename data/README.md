@@ -39,6 +39,7 @@ APIs.
 > **Truncation.** The reference-MIA runners score only the first 2,048 answer
 > tokens (`--max_answer_tokens 2048`), so long reasoning traces contribute only
 > their leading 2,048 tokens to the reference-normalized loss.
+
 > The **DeepSeek R1** s1 responses are sourced from [simplescaling/s1K-1.1](https://huggingface.co/datasets/simplescaling/s1K-1.1) rather than locally generated.
 
 ## `MIADatasets/` provenance
