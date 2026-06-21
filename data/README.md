@@ -40,6 +40,9 @@ APIs.
 > tokens (`--max_answer_tokens 2048`), so long reasoning traces contribute only
 > their leading 2,048 tokens to the reference-normalized loss.
 
+
+> The **DeepSeek R1** s1 responses are sourced from [simplescaling/s1K-1.1](https://huggingface.co/datasets/simplescaling/s1K-1.1) rather than locally generated.
+
 ## `MIADatasets/` provenance
 
 Controlled candidate-teacher responses (4 teachers × OMI/s1, 200 rows each),
